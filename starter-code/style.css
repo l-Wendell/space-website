@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
+/* font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Bellefair', serif; */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Barlow Condensed', sans-serif;
+	color: #fff;
+}
+
+body {
+	height: 100vh;
+	/* background-image: url(./assets/home/background-home-desktop.jpg); */
+	background-image: url(./assets/destination/background-destination-desktop.jpg);
+	background-position: cover cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+ul {
+	list-style: none;
+}
+
+.nav {
+	top: 2rem;
+	width: 100vw;
+	position: absolute;
+	height: 96px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 10;
+}
+
+.nav .logo {
+	margin-left: 4rem;
+}
+
+.nav .navDiv {
+	background: rgba(255, 255, 255, 0.04);
+
+	backdrop-filter: blur(40.7742px);
+	/* background-color: red; */
+	height: 100%;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.nav .navDiv::before {
+	content: '';
+	position: absolute;
+	left: -45%;
+	background-color: #fff;
+	height: 1px;
+	width: 50%;
+}
+
+.nav .navDiv .ulNav {
+	padding-right: 1.2rem;
+	list-style: none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.nav .navDiv .ulNav li {
+	font-size: 1.5rem;
+	margin-left: 1.5rem;
+	cursor: pointer;
+	position: relative;
+	/* overflow: hidden; */
+}
+
+.nav .navDiv .ulNav li::before {
+	content: '';
+	width: 0;
+	background-color: #fff;
+	opacity: 0.5;
+	position: absolute;
+	height: 3px;
+	right: 0;
+	transition: all 0.7s;
+	bottom: -31px;
+}
+
+.nav .navDiv .ulNav .actualLink::before {
+	content: '';
+	width: 100%;
+	opacity: 1;
+}
+
+.nav .navDiv .ulNav li:hover::before {
+	width: 100%;
+}
+
+.nav .navDiv .ulNav li span {
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.mainHome {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.mainHome .textSection {
+	width: 444px;
+}
+
+.mainHome .textSection h1 {
+	font-size: 9.375rem;
+	font-weight: normal;
+	margin: 10px 0;
+	font-family: 'Bellefair', serif;
+}
+
+.mainHome .textSection p {
+	color: #d0d6f9;
+}
+
+.mainHome .textSection p:first-child {
+	font-size: 1.75rem;
+	letter-spacing: 4.75px;
+}
+
+.mainHome .textSection p:last-child {
+	font-size: 1.125rem;
+}
+
+.mainHome .bubble {
+	width: 270px;
+	height: 270px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	position: relative;
+	background-color: #fff;
+	transition: 0.7s;
+	cursor: pointer;
+}
+
+.mainHome .bubble:before {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0px;
+	background-color: #fff;
+	border-radius: 50%;
+	transition: all 0.7s;
+	opacity: 10.36%;
+}
+
+.mainHome .bubble:hover:before {
+	width: 450px;
+	height: 450px;
+}
+
+.mainHome .bubble p {
+	color: #000;
+	font-size: 2rem;
+	font-family: 'Bellefair', serif;
+}
+
+/* 
+///////////////////////////////////////////////////////////////
+DESTINATION 
+///////////////////////////////////////////////////////////////
+*/
+
+.mainDestination {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 90%;
+}
+
+.mainDestination .destinationDiv {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.mainDestination .destinationDiv p {
+	position: absolute;
+	top: -70px;
+	left: -50px;
+	color: #fff;
+	font-size: 1.75rem;
+	letter-spacing: 4.725px;
+	/* margin-bottom: 20px; */
+}
+
+.mainDestination .destinationDiv p > span {
+	margin-right: 0.625rem;
+	font-weight: 700;
+	opacity: 0.25;
+	font-size: 1.875rem;
+}
+
+.mainDestination .destinationTextDiv {
+	max-width: 445px;
+}
+
+.mainDestination .destinationTextDiv .destinationsUl {
+	display: flex;
+	width: 60%;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.mainDestination .destinationTextDiv .destinationsUl li {
+	font-size: 1rem;
+	letter-spacing: 2.7px;
+	position: relative;
+}
+
+.mainDestination .destinationTextDiv .destinationsUl li::before {
+	content: '';
+	/* width: 95%; */
+	width: 0;
+	opacity: 0.5;
+	background-color: #fff;
+	position: absolute;
+	height: 3px;
+	bottom: -5px;
+	transition: all 0.7s;
+}
+
+.mainDestination
+	.destinationTextDiv
+	.destinationsUl
+	.actualDestination::before {
+	opacity: 1;
+	width: 95%;
+}
+
+.mainDestination .destinationTextDiv .destinationsUl li:hover::before {
+	width: 95%;
+}
+/* 
+.mainDestination .destinationTextDiv .destinationsUl .actualDestination {
+	
+} */
+
+.mainDestination .destinationTextDiv .destinationH1 {
+	font-size: 6.25rem;
+	font-family: 'Bellefair', serif;
+	margin: 20px 0;
+	font-weight: 400;
+}
+
+.mainDestination .destinationTextDiv .explanationDestinationP {
+	font-size: 1.125rem;
+	line-height: 2rem;
+}
+
+.mainDestination .destinationTextDiv .statisticsDestination {
+	border-top: 1px solid #383b4b;
+	margin-top: 20px;
+	padding-top: 15px;
+}
+
+.mainDestination .destinationTextDiv .statisticsDestination .items {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 80%;
+}
+
+.mainDestination .destinationTextDiv .statisticsDestination .items p {
+	font-size: 0.875rem;
+	letter-spacing: 2.3625px;
+	color: #d0d6f9;
+	margin-bottom: 5px;
+}
+
+.mainDestination .destinationTextDiv .statisticsDestination .items h2 {
+	font-size: 1.74rem;
+	font-family: 'Bellefair', serif;
+	font-weight: 400;
+}
+
+/* 
+///////////////////////////////////////////////////////////////
+CREW 
+///////////////////////////////////////////////////////////////
+*/
+
+.mainCrew {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.mainCrew .crewTextDiv {
+	height: 100%;
+	width: 50%;
+}
+
+.mainCrew .crewTextDiv > p {
+	margin-bottom: 10.375rem;
+	font-size: 1.75rem;
+	letter-spacing: 4.725px;
+}
+
+.mainCrew .crewTextDiv > p span {
+	margin-right: 0.625rem;
+	opacity: 0.25;
+	font-weight: 700;
+	letter-spacing: 4.725px;
+}
+
+.mainCrew .crewTextDiv .crewTextBio h2 {
+	font-size: 2rem;
+	font-family: 'Bellefair', serif;
+	opacity: 0.5;
+	font-weight: 400;
+}
+
+.mainCrew .crewTextDiv .crewTextBio h1 {
+	margin-bottom: 3.25rem;
+	margin-top: 2.0625rem;
+	font-size: 3.5rem;
+	font-family: 'Bellefair', serif;
+	font-weight: 400;
+}
+
+.mainCrew .crewTextDiv .crewTextBio p {
+	width: 70%;
+	font-size: 1.125rem;
+	color: #d0d6f9;
+	margin-bottom: 7.8125rem;
+}
+
+.mainCrew .crewTextDiv .carouselButtons button {
+	margin-right: 1.5rem;
+	width: 0.9375rem;
+	height: 0.9375rem;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	opacity: 0.17;
+}
+
+.mainCrew .crewTextDiv .carouselButtons button.actualButton {
+	opacity: 1;
+}
+
+@media (max-height: 820px) {
+	.mainCrew .crewTextDiv > p {
+		margin-bottom: 5rem;
+	}
+
+	.mainCrew .crewTextDiv .crewTextBio h1 {
+		margin-bottom: 2rem;
+	}
+
+	.mainCrew .crewTextDiv .crewTextBio p {
+		margin-bottom: 5rem;
+	}
+
+	.mainCrew .personImage img {
+		height: 100%;
+		width: 100%;
+	}
+
+	.mainCrew .personImage {
+		max-width: 400px;
+	}
+}
