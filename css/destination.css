@@ -1,0 +1,107 @@
+body {
+	background-image: url(/assets/destination/background-destination-desktop.jpg);
+}
+
+.main {
+	width: 90%;
+	justify-content: space-around;
+}
+
+.main .destinationDiv {
+	display: flex;
+	position: relative;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.main .destinationDiv p {
+	top: -4.375rem;
+	left: -3.125rem;
+	color: #fff;
+	font-size: 1.75rem;
+	position: absolute;
+	letter-spacing: 4.725px;
+}
+
+.main .destinationDiv p > span {
+	opacity: 0.25;
+	font-weight: 700;
+	font-size: 1.875rem;
+	margin-right: 0.625rem;
+}
+
+.main .destinationTextDiv {
+	max-width: 27.8125rem;
+}
+
+.main .destinationTextDiv .destinationsUl {
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.main .destinationTextDiv .destinationsUl li {
+	font-size: 1rem;
+	position: relative;
+	letter-spacing: 2.7px;
+}
+
+.main .destinationTextDiv .destinationsUl li::before {
+	width: 0;
+	content: '';
+	height: 3px;
+	bottom: -5px;
+	opacity: 0.5;
+	position: absolute;
+	transition: all 0.7s;
+	background-color: #fff;
+}
+
+.main .destinationTextDiv .destinationsUl .actualDestination::before {
+	opacity: 1;
+	width: 95%;
+}
+
+.main .destinationTextDiv .destinationsUl li:hover::before {
+	width: 95%;
+}
+
+.main .destinationTextDiv .destinationH1 {
+	margin: 1.25rem 0;
+	font-weight: 400;
+	font-size: 6.25rem;
+	font-family: 'Bellefair', serif;
+}
+
+.main .destinationTextDiv .explanationDestinationP {
+	line-height: 2rem;
+	font-size: 1.125rem;
+}
+
+.main .destinationTextDiv .statisticsDestination {
+	margin-top: 1.25rem;
+	padding-top: 0.9375rem;
+	border-top: 1px solid #383b4b;
+}
+
+.main .destinationTextDiv .statisticsDestination .items {
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.main .destinationTextDiv .statisticsDestination .items p {
+	color: #d0d6f9;
+	margin-bottom: 5px;
+	font-size: 0.875rem;
+	letter-spacing: 2.3625px;
+}
+
+.main .destinationTextDiv .statisticsDestination .items h2 {
+	font-weight: 400;
+	font-size: 1.74rem;
+	font-family: 'Bellefair', serif;
+}

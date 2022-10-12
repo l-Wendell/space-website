@@ -1,0 +1,70 @@
+body {
+	background-image: url(/assets/technology/background-technology-desktop.jpg);
+}
+
+.main {
+	justify-content: space-between;
+}
+
+.main .technologyTextDiv {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	margin-left: 10.375rem;
+	align-items: center;
+}
+
+.main .technologyTextDiv .buttonDiv {
+	height: 100%;
+	display: flex;
+	margin-right: 5rem;
+	align-items: center;
+	flex-direction: column;
+}
+
+.main .technologyTextDiv .buttonDiv button {
+	width: 5rem;
+	height: 5rem;
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 400;
+	border-radius: 50%;
+	margin-bottom: 1rem;
+	background-color: transparent;
+	font-family: 'Bellefair', serif;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.main .technologyTextDiv .buttonDiv .activeButton {
+	border: none;
+	color: #0b0d17;
+	background-color: #fff;
+}
+
+.main .technologyTextDiv .textTechnology p:first-child {
+	font-size: 1rem;
+	color: #d0d6f9;
+	letter-spacing: 2.7px;
+}
+
+.main .technologyTextDiv .textTechnology h1 {
+	font-weight: 400;
+	font-size: 3.5rem;
+	line-height: 4rem;
+	margin: 1rem 0 1.5rem 0;
+	font-family: 'Bellefair', serif;
+}
+
+.main .technologyTextDiv .textTechnology p:last-child {
+	color: #d0d6f9;
+	line-height: 2rem;
+	font-size: 1.125rem;
+}
+
+.main .techImage {
+	max-width: 25rem;
+}
+
+.main .techImage img {
+	width: 100%;
+}

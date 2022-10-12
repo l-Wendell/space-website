@@ -1,0 +1,67 @@
+body {
+	background-image: url(/assets/home/background-home-desktop.jpg);
+}
+
+.main {
+	width: 100%;
+	justify-content: space-around;
+}
+
+.main .textSection {
+	width: 27.75rem;
+}
+
+.main .textSection h1 {
+	margin: 0.625rem 0;
+	font-size: 9.375rem;
+	font-weight: normal;
+	font-family: 'Bellefair', serif;
+}
+
+.main .textSection p {
+	color: #d0d6f9;
+}
+
+.main .textSection p:first-child {
+	font-size: 1.75rem;
+	letter-spacing: 4.75px;
+}
+
+.main .textSection p:last-child {
+	font-size: 1.125rem;
+}
+
+.main .bubble {
+	width: 16.875rem;
+	height: 16.875rem;
+	display: flex;
+	cursor: pointer;
+	transition: 0.7s;
+	border-radius: 50%;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+}
+
+.main .bubble:before {
+	width: 0;
+	height: 0;
+	content: '';
+	opacity: 10.36%;
+	border-radius: 50%;
+	position: absolute;
+	transition: all 0.7s;
+	background-color: #fff;
+}
+
+.main .bubble:hover:before {
+	width: 28.125rem;
+	height: 28.125rem;
+}
+
+.main .bubble p {
+	color: #000;
+	font-size: 2rem;
+	font-family: 'Bellefair', serif;
+}

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	box-sizing: border-box;
+	font-family: 'Barlow Condensed', sans-serif;
+}
+
+body {
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	background-size: cover;
+	justify-content: center;
+	background-repeat: no-repeat;
+	background-position: cover cover;
+}
+
+ul {
+	list-style: none;
+}
+
+.main {
+	display: flex;
+	align-items: center;
+}
+
+.nav {
+	top: 2rem;
+	z-index: 10;
+	height: 6rem;
+	width: 100vw;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav .logo {
+	margin-left: 4rem;
+}
+
+.nav .navDiv {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	backdrop-filter: blur(40.7742px);
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.nav .navDiv::before {
+	left: -45%;
+	width: 50%;
+	content: '';
+	height: 1px;
+	position: absolute;
+	background-color: #fff;
+}
+
+.nav .navDiv .ulNav {
+	height: 100%;
+	display: flex;
+	list-style: none;
+	align-items: center;
+	padding-right: 1.2rem;
+}
+
+.nav .navDiv .ulNav li {
+	cursor: pointer;
+	font-size: 1.5rem;
+	position: relative;
+	margin-left: 1.5rem;
+}
+
+.nav .navDiv .ulNav li::before {
+	right: 0;
+	width: 0;
+	content: '';
+	height: 3px;
+	opacity: 0.5;
+	bottom: -2rem;
+	position: absolute;
+	transition: all 0.7s;
+	background-color: #fff;
+}
+
+.nav .navDiv .ulNav .actualLink::before {
+	opacity: 1;
+	content: '';
+	width: 100%;
+}
+
+.nav .navDiv .ulNav li:hover::before {
+	width: 100%;
+}
+
+.nav .navDiv .ulNav li span {
+	font-weight: bold;
+	margin-right: 0.625rem;
+}
