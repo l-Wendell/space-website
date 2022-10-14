@@ -5,22 +5,32 @@ body {
 .main {
 	width: 90%;
 	justify-content: space-around;
+	overflow: hidden;
+}
+
+@keyframes hideAnimation {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: -550px;
+	}
 }
 
 .main .destinationDiv {
-	display: flex;
 	position: relative;
-	align-items: center;
 	flex-direction: column;
 	justify-content: center;
+	/* animation: hideAnimation 1s ease-out infinite; */
 }
 
 .main .destinationDiv p {
-	top: -4.375rem;
-	left: -3.125rem;
 	color: #fff;
+	left: -3.125rem;
+	top: -4.375rem;
 	font-size: 1.75rem;
 	position: absolute;
+	z-index: 10;
 	letter-spacing: 4.725px;
 }
 
@@ -31,9 +41,22 @@ body {
 	margin-right: 0.625rem;
 }
 
-.main .destinationTextDiv {
-	max-width: 27.8125rem;
+.main .destinationDiv .destinationImage {
+	max-width: 400px;
 }
+
+.main .destinationDiv .destinationImage img {
+	width: 100%;
+}
+
+.main .destinationTextDiv {
+	position: relative;
+	max-width: 27.8125rem;
+	/* animation: hideAnimation 1s linear infinite; */
+}
+
+/* .main .destinationTextDiv:hover {
+} */
 
 .main .destinationTextDiv .destinationsUl {
 	width: 60%;
@@ -44,6 +67,7 @@ body {
 
 .main .destinationTextDiv .destinationsUl li {
 	font-size: 1rem;
+	cursor: pointer;
 	position: relative;
 	letter-spacing: 2.7px;
 }
@@ -104,4 +128,13 @@ body {
 	font-weight: 400;
 	font-size: 1.74rem;
 	font-family: 'Bellefair', serif;
+}
+
+@media (max-height: 840px) {
+	body {
+		align-items: flex-end;
+	}
+	.main {
+		margin-bottom: 50px;
+	}
 }

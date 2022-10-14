@@ -15,3 +15,4 @@
 .DS_Store
 .prettierignore
 styleLegacy.css
+node_modules

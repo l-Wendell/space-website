@@ -15,10 +15,12 @@
 			</figure>
 			<div class="navDiv">
 				<ul class="ulNav">
-					<li><span>00</span>HOME</li>
-					<li class="actualLink"><span>01</span>DESTINATION</li>
-					<li><span>02</span>CREW</li>
-					<li><span>03</span>TECHNOLOGY</li>
+					<li><span>00</span><a href="./home.html">HOME</a></li>
+					<li class="actualLink">
+						<span>01</span><a href="./destination.html">DESTINATION</a>
+					</li>
+					<li><span>02</span><a href="./crew.html">CREW</a></li>
+					<li><span>03</span><a href="./technology.html">TECHNOLOGY</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -32,11 +34,15 @@
 				</figure>
 			</div>
 			<div class="destinationTextDiv">
-				<ul class="destinationsUl">
-					<li class="actualDestination">MOON</li>
-					<li>MARS</li>
-					<li>EUROPA</li>
-					<li>TITAN</li>
+				<ul
+					endPoint="destination"
+					data-js="destinationsUl"
+					class="destinationsUl"
+				>
+					<li nameDestination="Moon" class="actualDestination">MOON</li>
+					<li nameDestination="Mars">MARS</li>
+					<li nameDestination="Europa">EUROPA</li>
+					<li nameDestination="Titan">TITAN</li>
 				</ul>
 
 				<h1 class="destinationH1">MOON</h1>
@@ -62,5 +68,8 @@
 			</div>
 			<!-- </section> -->
 		</main>
+		<script src="/node_modules/animejs/lib/anime.min.js"></script>
+		<script src="/js/app.js" type="module"></script>
+		<!-- <script src="../node_modules/animejs/lib/anime.min.js"></script> -->
 	</body>
 </html>
