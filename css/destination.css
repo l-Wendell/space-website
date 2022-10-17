@@ -66,6 +66,7 @@ body {
 }
 
 .main .destinationTextDiv .destinationsUl li {
+	text-transform: uppercase;
 	font-size: 1rem;
 	cursor: pointer;
 	position: relative;
@@ -93,6 +94,7 @@ body {
 }
 
 .main .destinationTextDiv .destinationH1 {
+	text-transform: uppercase;
 	margin: 1.25rem 0;
 	font-weight: 400;
 	font-size: 6.25rem;
@@ -118,6 +120,7 @@ body {
 }
 
 .main .destinationTextDiv .statisticsDestination .items p {
+	text-transform: uppercase;
 	color: #d0d6f9;
 	margin-bottom: 5px;
 	font-size: 0.875rem;
@@ -125,6 +128,7 @@ body {
 }
 
 .main .destinationTextDiv .statisticsDestination .items h2 {
+	text-transform: uppercase;
 	font-weight: 400;
 	font-size: 1.74rem;
 	font-family: 'Bellefair', serif;
