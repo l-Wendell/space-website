@@ -15,13 +15,13 @@
 			</figure>
 			<div class="navDiv">
 				<ul class="ulNav">
-					<li><span>00</span><a href="./home.html">HOME</a></li>
+					<li><span>00</span><a href="./home.html">home</a></li>
 
-					<li><span>01</span><a href="./destination.html">DESTINATION</a></li>
+					<li><span>01</span><a href="./destination.html">destination</a></li>
 					<li class="actualLink">
-						<span>02</span><a href="./crew.html">CREW</a>
+						<span>02</span><a href="./crew.html">crew</a>
 					</li>
-					<li><span>03</span><a href="./technology.html">TECHNOLOGY</a></li>
+					<li><span>03</span><a href="./technology.html">technology</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -41,16 +41,42 @@
 				</div>
 
 				<div class="carouselButtons">
-					<button class="actualButton" name="button1" value="1"></button>
-					<button name="button2" value="2"></button>
-					<button name="button3" value="3"></button>
-					<button name="button4" value="4"></button>
+					<button
+						endPoint="crew"
+						data-js="carouselButton"
+						class="button actualButton"
+						name="button1"
+						value="1"
+					></button>
+					<button
+						endPoint="crew"
+						data-js="carouselButton"
+						class="button"
+						name="button2"
+						value="2"
+					></button>
+					<button
+						endPoint="crew"
+						data-js="carouselButton"
+						class="button"
+						name="button3"
+						value="3"
+					></button>
+					<button
+						endPoint="crew"
+						data-js="carouselButton"
+						class="button"
+						name="button4"
+						value="4"
+					></button>
 				</div>
 			</div>
 
 			<figure class="personImage">
-				<img src="/assets/crew/image-douglas-hurley.png" alt="personImage" />
+				<img src="/assets/crew/image-douglas-hurley.webp" alt="personImage" />
 			</figure>
 		</main>
+
+		<script src="/js/crew.js" type="module"></script>
 	</body>
 </html>

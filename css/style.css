@@ -70,6 +70,7 @@ body {
 }
 
 .nav .navDiv .ulNav li {
+	text-transform: uppercase;
 	cursor: pointer;
 	font-size: 1.5rem;
 	position: relative;

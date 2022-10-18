@@ -1,5 +1,5 @@
 import anime from '/node_modules/animejs/lib/anime.es.js';
-import { getHTML } from './getDomElements.js';
+import { getHTML, getData } from './defautFuntions.js';
 
 const destinationTextDiv = getHTML.get('.destinationTextDiv');
 const destinationDiv = getHTML.get('.destinationDiv');
@@ -19,14 +19,6 @@ const turnActive = nameLi => {
 	});
 
 	actualLi.classList.add('actualDestination');
-};
-
-const getData = async (endPoint, name) => {
-	const response = await fetch('/data.json');
-	const json = await response.json();
-	const [data] = json[endPoint].filter(item => item.name === name);
-
-	return data;
 };
 
 const addAnimation = (value1, value2) => {
@@ -61,13 +53,16 @@ const attInfos = async target => {
 	const $travelTime = getHTML.get(
 		'.destinationTextDiv .statisticsDestination .travelTime h2'
 	);
-	const destination = target.getAttribute('nameDestination');
+	const id = +target.getAttribute('destinationID');
 	const endPoint = target.getAttribute('endPoint');
 
-	const data = await getData(endPoint, destination);
-	const { images, name, distance, travel, description } = data;
+	const { images, name, distance, travel, description } = await getData(
+		endPoint,
+		id
+	);
+	// const = data;
 
-	$imageDestination.setAttribute('src', images.webp);
+	$imageDestination.src = images.webp;
 	$destinationH1.textContent = name;
 
 	$explanationDestinationP.textContent = description;
