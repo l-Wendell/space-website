@@ -4,8 +4,8 @@ body {
 
 .main {
 	width: 90%;
-	justify-content: space-around;
 	overflow: hidden;
+	justify-content: space-around;
 }
 
 @keyframes hideAnimation {
@@ -21,16 +21,15 @@ body {
 	position: relative;
 	flex-direction: column;
 	justify-content: center;
-	/* animation: hideAnimation 1s ease-out infinite; */
 }
 
 .main .destinationDiv p {
+	z-index: 10;
 	color: #fff;
-	left: -3.125rem;
 	top: -4.375rem;
+	left: -3.125rem;
 	font-size: 1.75rem;
 	position: absolute;
-	z-index: 10;
 	letter-spacing: 4.725px;
 }
 
@@ -52,11 +51,7 @@ body {
 .main .destinationTextDiv {
 	position: relative;
 	max-width: 27.8125rem;
-	/* animation: hideAnimation 1s linear infinite; */
 }
-
-/* .main .destinationTextDiv:hover {
-} */
 
 .main .destinationTextDiv .destinationsUl {
 	width: 60%;
@@ -66,11 +61,11 @@ body {
 }
 
 .main .destinationTextDiv .destinationsUl li {
-	text-transform: uppercase;
 	font-size: 1rem;
 	cursor: pointer;
 	position: relative;
 	letter-spacing: 2.7px;
+	text-transform: uppercase;
 }
 
 .main .destinationTextDiv .destinationsUl li::before {
@@ -84,7 +79,7 @@ body {
 	background-color: #fff;
 }
 
-.main .destinationTextDiv .destinationsUl .actualDestination::before {
+.main .destinationTextDiv .destinationsUl .active::before {
 	opacity: 1;
 	width: 95%;
 }
@@ -94,10 +89,10 @@ body {
 }
 
 .main .destinationTextDiv .destinationH1 {
-	text-transform: uppercase;
-	margin: 1.25rem 0;
 	font-weight: 400;
+	margin: 1.25rem 0;
 	font-size: 6.25rem;
+	text-transform: uppercase;
 	font-family: 'Bellefair', serif;
 }
 
@@ -120,17 +115,17 @@ body {
 }
 
 .main .destinationTextDiv .statisticsDestination .items p {
-	text-transform: uppercase;
 	color: #d0d6f9;
 	margin-bottom: 5px;
 	font-size: 0.875rem;
 	letter-spacing: 2.3625px;
+	text-transform: uppercase;
 }
 
 .main .destinationTextDiv .statisticsDestination .items h2 {
-	text-transform: uppercase;
 	font-weight: 400;
 	font-size: 1.74rem;
+	text-transform: uppercase;
 	font-family: 'Bellefair', serif;
 }
 

@@ -3,10 +3,13 @@ body {
 }
 
 .main {
-	justify-content: space-between;
+	overflow: hidden;
+	position: absolute;
+	justify-content: space-around;
 }
 
 .main .technologyTextDiv {
+	position: relative;
 	width: 50%;
 	height: 100%;
 	display: flex;
@@ -40,19 +43,21 @@ body {
 	border-color: #fff;
 }
 
-.main .technologyTextDiv .buttonDiv .activeButton {
+.main .technologyTextDiv .buttonDiv .active {
 	border: none;
 	color: #0b0d17;
 	background-color: #fff;
 }
 
 .main .technologyTextDiv .textTechnology p:first-child {
+	text-transform: uppercase;
 	font-size: 1rem;
 	color: #d0d6f9;
 	letter-spacing: 2.7px;
 }
 
 .main .technologyTextDiv .textTechnology h1 {
+	text-transform: uppercase;
 	font-weight: 400;
 	font-size: 3.5rem;
 	line-height: 4rem;
@@ -67,6 +72,8 @@ body {
 }
 
 .main .techImage {
+	position: relative;
+
 	max-width: 25rem;
 }
 

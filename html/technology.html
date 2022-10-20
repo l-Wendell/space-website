@@ -15,12 +15,12 @@
 			</figure>
 			<div class="navDiv">
 				<ul class="ulNav">
-					<li><span>00</span><a href="./home.html">HOME</a></li>
+					<li><span>00</span><a href="./home.html">home</a></li>
 
-					<li><span>01</span><a href="./destination.html">DESTINATION</a></li>
-					<li><span>02</span><a href="./crew.html">CREW</a></li>
+					<li><span>01</span><a href="./destination.html">destination</a></li>
+					<li><span>02</span><a href="./crew.html">crew</a></li>
 					<li class="actualLink">
-						<span>03</span><a href="./technology.html">TECHNOLOGY</a>
+						<span>03</span><a href="./technology.html">technology</a>
 					</li>
 				</ul>
 			</div>
@@ -28,15 +28,39 @@
 		<main class="main mainTechnology">
 			<div class="technologyTextDiv">
 				<div class="buttonDiv">
-					<button class="activeButton">1</button>
-					<button>2</button>
-					<button>3</button>
+					<button
+						data-js="carouselButton"
+						endPoint="technology"
+						class="button active"
+						value="1"
+						name="button1"
+					>
+						1
+					</button>
+					<button
+						name="button2"
+						data-js="carouselButton"
+						endPoint="technology"
+						value="2"
+						class="button"
+					>
+						2
+					</button>
+					<button
+						class="button"
+						name="button3"
+						data-js="carouselButton"
+						endPoint="technology"
+						value="3"
+					>
+						3
+					</button>
 				</div>
 
 				<div class="textTechnology">
-					<p>THE TERMINOLOGY…</p>
-					<h1>LAUNCH VEHICLE</h1>
-					<p>
+					<p>the terminology…</p>
+					<h1 class="techName">launch vehicle</h1>
+					<p class="descriptionParagraph">
 						A launch vehicle or carrier rocket is a rocket-propelled vehicle
 						used to carry a payload from Earth's surface to space, usually to
 						Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful
@@ -53,5 +77,6 @@
 				/>
 			</figure>
 		</main>
+		<script src="/js/technology.js" type="module"></script>
 	</body>
 </html>

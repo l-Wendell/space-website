@@ -4,15 +4,15 @@ body {
 
 .main {
 	bottom: 0;
+	overflow: hidden;
 	position: absolute;
 	justify-content: space-around;
-	overflow: hidden;
 }
 
 .main .crewTextDiv {
-	position: relative;
 	width: 50%;
 	height: 80%;
+	position: relative;
 }
 
 .main .crewTextDiv > p {
@@ -29,19 +29,19 @@ body {
 }
 
 .main .crewTextDiv .crewTextBio h2 {
-	text-transform: uppercase;
 	opacity: 0.5;
 	font-size: 2rem;
 	font-weight: 400;
+	text-transform: uppercase;
 	font-family: 'Bellefair', serif;
 }
 
 .main .crewTextDiv .crewTextBio h1 {
-	text-transform: uppercase;
 	font-weight: 400;
 	font-size: 3.5rem;
 	margin-top: 2.0625rem;
 	margin-bottom: 3.25rem;
+	text-transform: uppercase;
 	font-family: 'Bellefair', serif;
 }
 
@@ -67,7 +67,7 @@ body {
 	opacity: 0.5;
 }
 
-.main .crewTextDiv .carouselButtons button.actualButton {
+.main .crewTextDiv .carouselButtons button.active {
 	opacity: 1;
 }
 

@@ -1,8 +1,9 @@
 import anime from '/node_modules/animejs/lib/anime.es.js';
-import { getHTML, getData } from './defautFuntions.js';
+import { getHTML, getData, Timer, turnActive } from './defautFuntions.js';
 
-const buttons = getHTML.getAll('.button');
+const buttons = [...getHTML.getAll('.button')];
 const carouselButtons = getHTML.get('.carouselButtons');
+
 const crewTextDiv = getHTML.get('.crewTextDiv');
 const personImage = getHTML.get('.personImage');
 
@@ -22,28 +23,17 @@ const addAnimation = (value1, value2) => {
 		);
 };
 
-const turnActive = nameButton => {
-	const [actualButton] = buttons.filter(button => button.name === nameButton);
-
-	buttons.forEach(button => {
-		if (actualButton !== button) {
-			button.classList.remove('actualButton');
-		}
-	});
-
-	actualButton.classList.add('actualButton');
-};
-
 const attInfos = async target => {
 	const endPoint = target.getAttribute('endPoint');
 	const id = +target.value;
-	const { bio, images, name, role } = await getData(endPoint, id);
 
 	const roleh2 = getHTML.get('.crewTextBio h2');
 	const nameH1 = getHTML.get('.crewTextBio h1');
 
 	const bioParagraph = getHTML.get('.crewTextBio p');
 	const personImage = getHTML.get('.personImage img');
+
+	const { bio, images, name, role } = await getData(endPoint, id);
 
 	roleh2.textContent = role;
 	nameH1.textContent = name;
@@ -52,6 +42,7 @@ const attInfos = async target => {
 	personImage.src = images.webp;
 
 	addAnimation('0', '0');
+	turnActive(target.name, buttons);
 };
 
 const hideDiv = target => {
@@ -59,10 +50,31 @@ const hideDiv = target => {
 	timeline.finished.then(() => attInfos(target));
 };
 
+const carouselFunction = () => {
+	const [actualButton] = buttons.filter(button =>
+		button.classList.contains('active')
+	);
+
+	const [nextButton] = buttons.filter(button => {
+		const lastButtonValue = buttons[buttons.length - 1].value;
+		const actualButtonValue = +actualButton.value + 1;
+
+		if (actualButtonValue > lastButtonValue) {
+			return +button.value === 1;
+		}
+
+		return +button.value === +actualButton.value + 1;
+	});
+
+	hideDiv(nextButton);
+};
+
+const carouselInterval = new Timer(carouselFunction, 8000);
+
 const actions = {
 	async carouselButton(target) {
-		turnActive(target.name);
 		hideDiv(target);
+		carouselInterval.reset(8000);
 	},
 };
 
@@ -71,3 +83,5 @@ carouselButtons.addEventListener('click', ({ target }) => {
 	const func = actions[name];
 	func?.(target);
 });
+
+carouselInterval.start();
