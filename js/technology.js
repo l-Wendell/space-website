@@ -1,5 +1,5 @@
 import anime from '/node_modules/animejs/lib/anime.es.js';
-import { getHTML, getData, turnActive } from './defautFuntions.js';
+import { getHTML, getData, turnActive } from './app.js';
 
 const buttonDiv = getHTML.get('.buttonDiv');
 const technologyTextDiv = getHTML.get('.technologyTextDiv');

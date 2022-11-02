@@ -61,7 +61,92 @@ body {
 }
 
 .main .bubble p {
-	color: #000;
+	color: #0b0d17;
 	font-size: 2rem;
 	font-family: 'Bellefair', serif;
 }
+
+@media (max-width: 1100px) {
+	.main .textSection h1 {
+		font-size: 8rem;
+	}
+
+	.main .textSection p:first-child {
+		font-size: 1.5rem;
+	}
+
+	.main .textSection p:last-child {
+		font-size: 1rem;
+	}
+
+	.main .bubble {
+		width: 14rem;
+		height: 14rem;
+	}
+
+	.main .bubble:hover:before {
+		width: 18rem;
+		height: 18rem;
+	}
+}
+
+@media (max-width: 830px) {
+	body {
+		background-image: url(/assets/home/background-home-tablet.jpg);
+	}
+
+	.main {
+		flex-direction: column;
+	}
+
+	.main .textSection p:last-child {
+		text-align: center;
+		line-height: 25px;
+	}
+
+	.main .textSection {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.main .bubble {
+		margin-top: 50px;
+	}
+}
+
+@media (max-width: 630px) {
+	.main .textSection p:first-child {
+		font-size: 1rem;
+	}
+
+	.main .textSection h1 {
+		font-size: 5rem;
+	}
+
+	.main .textSection p:last-child {
+		font-size: 0.9375rem;
+	}
+
+	.main .bubble {
+		width: 9.375rem;
+		height: 9.375rem;
+	}
+
+	.main .bubble:hover:before {
+		width: 13rem;
+		height: 13rem;
+	}
+
+	.main .bubble p {
+		font-size: 1.25rem;
+	}
+	.main .textSection {
+		width: 100%;
+		padding: 0 20px;
+	}
+}
+
+/* 1100 */
+/* 	width: 270px;  BUBBLE*/
+/* width: 450px; BUBBLE BACKGROUND */

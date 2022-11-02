@@ -5,6 +5,7 @@ body {
 .main {
 	bottom: 0;
 	overflow: hidden;
+	min-height: 500px;
 	position: absolute;
 	justify-content: space-around;
 }
@@ -13,6 +14,10 @@ body {
 	width: 50%;
 	height: 80%;
 	position: relative;
+}
+
+.main .crewTextDiv .test {
+	display: none;
 }
 
 .main .crewTextDiv > p {
@@ -73,7 +78,7 @@ body {
 
 .main .personImage {
 	position: relative;
-	max-height: 600px;
+	max-height: 500px;
 }
 
 @media (max-height: 820px) {
@@ -96,5 +101,125 @@ body {
 
 	.main .personImage {
 		max-width: 25rem;
+	}
+}
+
+/* 1230 */
+
+@media (max-width: 1230px) {
+	.main .crewTextDiv .crewTextBio h1 {
+		font-size: 2.5rem;
+	}
+
+	.main .personImage {
+		max-height: 450px;
+	}
+}
+/*    */
+@media (max-width: 1000px) {
+	.main {
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 75%;
+	}
+
+	.main .personImage {
+		/* max-height: 290px; */
+		max-width: 200px;
+	}
+
+	.main .crewTextDiv {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.main .crewTextDiv .crewTextBio {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.main .crewTextDiv .crewTextBio h2 {
+		font-size: 1.5rem;
+	}
+
+	.main .crewTextDiv .crewTextBio h1 {
+		font-size: 2.5rem;
+		margin: 1.25rem 0;
+	}
+
+	.main .crewTextDiv .crewTextBio p {
+		margin-bottom: 3rem;
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	.main .crewTextDiv .carouselButtons button {
+		width: 0.625rem;
+		height: 0.625rem;
+		border-radius: 50%;
+		margin-right: 1rem;
+	}
+}
+
+@media (max-width: 840px) {
+	.main {
+		flex-direction: column-reverse;
+		justify-content: initial;
+	}
+
+	.main .personImage {
+		/* max-height: 290px; */
+		max-width: 150px;
+		position: relative;
+	}
+
+	.main .personImage::after {
+		content: '';
+		position: absolute;
+		/* left: -25%; */
+		left: -70%;
+		bottom: 0;
+		height: 1px;
+		width: 250%;
+		/* width: 150%; */
+		background-color: #d0d6f9;
+	}
+
+	.main .crewTextDiv .carouselButtons {
+		margin: 2rem 0;
+	}
+
+	.main .crewTextDiv .crewTextBio h1 {
+		margin: 0.625rem 0 1.25rem 0;
+	}
+
+	.main .crewTextDiv {
+		flex-direction: column-reverse;
+	}
+}
+
+@media (max-width: 540px) {
+	.main .crewTextDiv .crewTextBio h1 {
+		font-size: 1.5rem;
+	}
+
+	.main .crewTextDiv .crewTextBio h2 {
+		font-size: 1rem;
+	}
+
+	.main .crewTextDiv .crewTextBio p {
+		font-size: 0.9375rem;
+	}
+}
+/* 420 */
+
+@media (max-width: 420px) {
+	.main .personImage::after {
+		left: -25%;
+		width: 150%;
 	}
 }

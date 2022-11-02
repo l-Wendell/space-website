@@ -63,6 +63,7 @@ body {
 .main .destinationTextDiv .destinationsUl li {
 	font-size: 1rem;
 	cursor: pointer;
+	color: #d0d6f9;
 	position: relative;
 	letter-spacing: 2.7px;
 	text-transform: uppercase;
@@ -77,6 +78,10 @@ body {
 	position: absolute;
 	transition: all 0.7s;
 	background-color: #fff;
+}
+
+.main .destinationTextDiv .destinationsUl li.active {
+	color: #fff;
 }
 
 .main .destinationTextDiv .destinationsUl .active::before {
@@ -99,6 +104,7 @@ body {
 .main .destinationTextDiv .explanationDestinationP {
 	line-height: 2rem;
 	font-size: 1.125rem;
+	color: #d0d6f9;
 }
 
 .main .destinationTextDiv .statisticsDestination {
@@ -135,5 +141,137 @@ body {
 	}
 	.main {
 		margin-bottom: 50px;
+	}
+}
+
+@media (max-width: 1150px) {
+	.main .destinationDiv .destinationImage {
+		max-width: 350px;
+	}
+	.main .destinationTextDiv .destinationH1 {
+		font-size: 5.7rem;
+	}
+
+	.main .destinationTextDiv .explanationDestinationP {
+		font-size: 1rem;
+	}
+	/* .main .destinationTextDiv .destinationsUl {
+		width: 60%;
+	} */
+
+	.main .destinationTextDiv .statisticsDestination .items h2 {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 1000px) {
+	.main .destinationDiv .destinationImage {
+		max-width: 300px;
+	}
+
+	.main .destinationTextDiv .destinationH1 {
+		font-size: 5rem;
+	}
+
+	.main .destinationTextDiv .destinationsUl {
+		width: 70%;
+	}
+
+	.main .destinationTextDiv .statisticsDestination .items h2 {
+		font-size: 1.5rem;
+	}
+
+	.main .destinationTextDiv {
+		max-width: 350px;
+	}
+}
+
+@media (max-width: 830px) {
+	.main .destinationDiv .destinationImage {
+		max-width: 250px;
+		margin-bottom: 20px;
+	}
+	.main .destinationTextDiv .destinationsUl {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.main .destinationTextDiv .destinationsUl li:first-child {
+		margin: 0;
+	}
+
+	.main .destinationTextDiv .destinationsUl li {
+		margin-left: 34px;
+	}
+
+	.main {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.main .destinationTextDiv {
+		max-width: 100%;
+	}
+
+	.main .destinationTextDiv .destinationH1 {
+		text-align: center;
+	}
+
+	.main .destinationTextDiv .explanationDestinationP {
+		text-align: center;
+	}
+
+	.main .destinationTextDiv .statisticsDestination .items {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 15%;
+	}
+
+	.main .destinationTextDiv .statisticsDestination .items .item {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 500px) {
+	.main {
+		margin: 0;
+	}
+	.main .destinationDiv .destinationImage {
+		max-width: 200px;
+	}
+
+	.main .destinationTextDiv .destinationsUl li {
+		font-size: 0.875rem;
+	}
+
+	.main .destinationTextDiv .destinationH1 {
+		font-size: 3.5rem;
+	}
+
+	.main .destinationTextDiv .explanationDestinationP {
+		font-size: 0.9375rem;
+	}
+
+	.main .destinationTextDiv .statisticsDestination .items {
+		flex-direction: column;
+	}
+
+	.main .destinationTextDiv .statisticsDestination .items div:first-child {
+		margin-bottom: 25px;
+	}
+}
+
+@media (max-height: 700px) and (max-width: 400px) {
+	.main .destinationDiv .destinationImage {
+		max-width: 150px;
+	}
+
+	.main .destinationTextDiv .destinationH1 {
+		margin: 0.625rem 0;
 	}
 }

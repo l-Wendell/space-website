@@ -1,5 +1,5 @@
 import anime from '/node_modules/animejs/lib/anime.es.js';
-import { getHTML, getData, Timer, turnActive } from './defautFuntions.js';
+import { getHTML, getData, Timer, turnActive } from './app.js';
 
 const buttons = [...getHTML.getAll('.button')];
 const carouselButtons = getHTML.get('.carouselButtons');
@@ -74,7 +74,7 @@ const carouselInterval = new Timer(carouselFunction, 8000);
 const actions = {
 	async carouselButton(target) {
 		hideDiv(target);
-		carouselInterval.reset(8000);
+		// carouselInterval.reset(8000);
 	},
 };
 
@@ -84,4 +84,4 @@ carouselButtons.addEventListener('click', ({ target }) => {
 	func?.(target);
 });
 
-carouselInterval.start();
+// carouselInterval.start();
