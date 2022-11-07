@@ -1,7 +1,7 @@
 import anime from '/node_modules/animejs/lib/anime.es.js';
 import { getHTML, getData, Timer, turnActive } from './app.js';
 
-const buttons = [...getHTML.getAll('.button')];
+const buttons = getHTML.getAll('.button');
 const carouselButtons = getHTML.get('.carouselButtons');
 
 const crewTextDiv = getHTML.get('.crewTextDiv');
@@ -19,7 +19,7 @@ const addAnimation = (value1, value2) => {
 				targets: crewTextDiv,
 				top: value2,
 			},
-			100
+			100,
 		);
 };
 
@@ -46,13 +46,13 @@ const attInfos = async target => {
 };
 
 const hideDiv = target => {
-	const timeline = addAnimation('-600px', '-600px');
+	const timeline = addAnimation('-620px', '-620px');
 	timeline.finished.then(() => attInfos(target));
 };
 
 const carouselFunction = () => {
 	const [actualButton] = buttons.filter(button =>
-		button.classList.contains('active')
+		button.classList.contains('active'),
 	);
 
 	const [nextButton] = buttons.filter(button => {
@@ -69,12 +69,13 @@ const carouselFunction = () => {
 	hideDiv(nextButton);
 };
 
-const carouselInterval = new Timer(carouselFunction, 8000);
+const _6seconds = 6000;
+const carouselInterval = new Timer(carouselFunction, _6seconds);
 
 const actions = {
 	async carouselButton(target) {
 		hideDiv(target);
-		// carouselInterval.reset(8000);
+		carouselInterval.reset(_6seconds);
 	},
 };
 
@@ -84,4 +85,4 @@ carouselButtons.addEventListener('click', ({ target }) => {
 	func?.(target);
 });
 
-// carouselInterval.start();
+carouselInterval.start();

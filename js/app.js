@@ -1,5 +1,3 @@
-import anime from '/node_modules/animejs/lib/anime.es.js';
-
 export const getHTML = {
 	get(element) {
 		return document.querySelector(element);
@@ -19,7 +17,7 @@ export const getData = async (endPoint, id) => {
 
 export const turnActive = (nameItem, arrayOfItems) => {
 	const [actualItem] = arrayOfItems.filter(
-		item => item.getAttribute('name') === nameItem
+		item => item.getAttribute('name') === nameItem,
 	);
 
 	arrayOfItems.forEach(item => {

@@ -3,9 +3,7 @@ import { getHTML, getData, turnActive } from './app.js';
 
 const destinationTextDiv = getHTML.get('.destinationTextDiv');
 const destinationDiv = getHTML.get('.destinationDiv');
-const destinationLis = [
-	...getHTML.getAll('.destinationTextDiv .destinationsUl li'),
-];
+const destinationLis = getHTML.getAll('.destinationTextDiv .destinationsUl li');
 
 const addAnimation = (value1, value2) => {
 	return anime
@@ -19,7 +17,7 @@ const addAnimation = (value1, value2) => {
 				targets: destinationDiv,
 				top: value2,
 			},
-			100
+			100,
 		);
 };
 
@@ -28,25 +26,25 @@ const attInfos = async target => {
 	const endPoint = target.getAttribute('endPoint');
 
 	const $imageDestination = getHTML.get(
-		'.destinationDiv .destinationImage img'
+		'.destinationDiv .destinationImage img',
 	);
 	const $destinationH1 = getHTML.get(
-		'.destinationTextDiv [data-js="destinationH1"]'
+		'.destinationTextDiv [data-js="destinationH1"]',
 	);
 
 	const $explanationDestinationP = getHTML.get(
-		'.destinationTextDiv [data-js="explanationDestinationP"]'
+		'.destinationTextDiv [data-js="explanationDestinationP"]',
 	);
 	const $distance = getHTML.get(
-		'.destinationTextDiv .statisticsDestination .distance h2'
+		'.destinationTextDiv .statisticsDestination .distance h2',
 	);
 
 	const $travelTime = getHTML.get(
-		'.destinationTextDiv .statisticsDestination .travelTime h2'
+		'.destinationTextDiv .statisticsDestination .travelTime h2',
 	);
 	const { images, name, distance, travel, description } = await getData(
 		endPoint,
-		id
+		id,
 	);
 
 	$imageDestination.src = images.webp;

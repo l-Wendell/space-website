@@ -1,55 +1,68 @@
 import anime from '/node_modules/animejs/lib/anime.es.js';
 import { getHTML, getData, turnActive } from './app.js';
 
+const body = document.body;
+const buttons = getHTML.getAll('.button');
+
 const buttonDiv = getHTML.get('.buttonDiv');
-const technologyTextDiv = getHTML.get('.technologyTextDiv');
-
 const techImage = getHTML.get('.techImage');
-const buttons = [...getHTML.getAll('.button')];
 
-const addAnimation = (value1, value2) => {
+const addAnimation = height => {
+	const technologyTextDiv = getHTML.get('.technologyTextDiv');
+
 	return anime
 		.timeline({ easing: 'easeInOutQuad', duration: 750 })
 		.add({
 			targets: technologyTextDiv,
-			top: value1,
+			top: height,
 		})
 		.add(
 			{
 				targets: techImage,
-				top: value2,
+				top: height,
 			},
-			100
+			100,
 		);
 };
 
-const attInfos = async target => {
-	const endPoint = target.getAttribute('endPoint');
-	const id = +target.value;
-	const { name, description, images } = await getData(endPoint, id);
+const attInfos = async button => {
+	const { value: id, name: buttonName } = button;
+	const endPoint = button.getAttribute('endPoint');
 
+	const { name, description, images } = await getData(endPoint, +id);
 	const techName = getHTML.get('.textTechnology .techName');
+
 	const descriptionParagraph = getHTML.get(
-		'.textTechnology .descriptionParagraph'
+		'.textTechnology .descriptionParagraph',
 	);
-	const techImage = getHTML.get('.techImage img');
+	const imageOrientation = body.clientWidth <= 830 ? 'landscape' : 'portrait';
 
 	techName.textContent = name;
 	descriptionParagraph.textContent = description;
-	techImage.src = images.portrait;
 
-	turnActive(target.name, buttons);
-	addAnimation('0', '0');
+	techImage.style.backgroundImage = `url(${images[imageOrientation]})`;
+
+	turnActive(buttonName, buttons);
+	addAnimation('0');
 };
 
-const hideDiv = target => {
-	const timeline = addAnimation('-600px', '-600px');
-	timeline.finished.then(() => attInfos(target));
+const hideDiv = parameters => {
+	const height = body.clientWidth <= 830 ? '-800px' : '-600px';
+	const timeline = addAnimation(height);
+
+	timeline.finished.then(() => attInfos(parameters));
+};
+
+const init = () => {
+	const [activeButton] = buttons.filter(button =>
+		button.classList.contains('active'),
+	);
+	attInfos(activeButton);
 };
 
 const actions = {
-	carouselButton(target) {
-		hideDiv(target);
+	carouselButton(button) {
+		hideDiv(button);
 	},
 };
 
@@ -58,3 +71,5 @@ buttonDiv.addEventListener('click', ({ target }) => {
 	const func = actions[name];
 	func?.(target);
 });
+
+init();
