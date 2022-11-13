@@ -1,3 +1,5 @@
+import anime from '/node_modules/animejs/lib/anime.es.js';
+
 export const getHTML = {
 	get(element) {
 		return document.querySelector(element);
@@ -60,3 +62,46 @@ export class Timer {
 		return this.stop().start();
 	}
 }
+
+const addTransitionOnLi = () => {
+	const lis = getHTML.getAll('.navDiv .ulNav li');
+	let valueOfTransition = 0.9;
+
+	lis.forEach(li => {
+		const newValueOfTransition = (valueOfTransition += 0.1).toFixed(1);
+		li.style.transition = `${newValueOfTransition}s`;
+	});
+};
+
+export const showNav = e => {
+	const navDiv = getHTML.get('.navDiv');
+	const nav = getHTML.get('.nav');
+
+	if (!nav.classList.contains('showNav')) {
+		navDiv.classList.add('showNav');
+		nav.classList.add('showNav');
+		e.target.classList = 'fa-solid fa-xmark iconMenu';
+	} else {
+		navDiv.classList.remove('showNav');
+		nav.classList.remove('showNav');
+		e.target.classList = 'fa-sharp fa-solid fa-bars iconMenu';
+	}
+
+	addTransitionOnLi();
+};
+
+export const addAnimation = ([target1, target2], height) => {
+	return anime
+		.timeline({ easing: 'easeInOutQuad', duration: 750 })
+		.add({
+			targets: target1,
+			top: height,
+		})
+		.add(
+			{
+				targets: target2,
+				top: height,
+			},
+			100,
+		);
+};

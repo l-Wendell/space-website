@@ -1,5 +1,5 @@
 import anime from '/node_modules/animejs/lib/anime.es.js';
-import { getHTML, getData, Timer, turnActive } from './app.js';
+import { getHTML, getData, Timer, turnActive, showNav } from './app.js';
 
 const buttons = getHTML.getAll('.button');
 const carouselButtons = getHTML.get('.carouselButtons');
@@ -7,17 +7,21 @@ const carouselButtons = getHTML.get('.carouselButtons');
 const crewTextDiv = getHTML.get('.crewTextDiv');
 const personImage = getHTML.get('.personImage');
 
-const addAnimation = (value1, value2) => {
+const iconMenu = getHTML.get('.iconMenu');
+
+// Não usei a função addAnimation do arquivo app.js por conta de um erro na biblioteca de animação
+// que eu não consegui resolver, a unica forma que encontrei foi refazer a função nesse arquivo
+const addAnimation = height => {
 	return anime
 		.timeline({ easing: 'easeInOutQuad', duration: 750 })
 		.add({
 			targets: personImage,
-			top: value1,
+			top: height,
 		})
 		.add(
 			{
 				targets: crewTextDiv,
-				top: value2,
+				top: height,
 			},
 			100,
 		);
@@ -41,12 +45,14 @@ const attInfos = async target => {
 	bioParagraph.textContent = bio;
 	personImage.src = images.webp;
 
-	addAnimation('0', '0');
+	addAnimation('0');
 	turnActive(target.name, buttons);
 };
 
 const hideDiv = target => {
-	const timeline = addAnimation('-620px', '-620px');
+	const height = '-620px';
+	const timeline = addAnimation(height);
+
 	timeline.finished.then(() => attInfos(target));
 };
 
@@ -83,6 +89,10 @@ carouselButtons.addEventListener('click', ({ target }) => {
 	const name = target.getAttribute('data-js');
 	const func = actions[name];
 	func?.(target);
+});
+
+iconMenu.addEventListener('click', e => {
+	showNav(e);
 });
 
 carouselInterval.start();

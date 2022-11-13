@@ -1,25 +1,10 @@
-import anime from '/node_modules/animejs/lib/anime.es.js';
-import { getHTML, getData, turnActive } from './app.js';
+import { getHTML, getData, turnActive, showNav, addAnimation } from './app.js';
+
+const body = document.body;
+const iconMenu = getHTML.get('.iconMenu');
 
 const destinationTextDiv = getHTML.get('.destinationTextDiv');
 const destinationDiv = getHTML.get('.destinationDiv');
-const destinationLis = getHTML.getAll('.destinationTextDiv .destinationsUl li');
-
-const addAnimation = (value1, value2) => {
-	return anime
-		.timeline({ easing: 'easeInOutQuad', duration: 750 })
-		.add({
-			targets: destinationTextDiv,
-			top: value1,
-		})
-		.add(
-			{
-				targets: destinationDiv,
-				top: value2,
-			},
-			100,
-		);
-};
 
 const attInfos = async target => {
 	const id = +target.getAttribute('destinationID');
@@ -47,6 +32,10 @@ const attInfos = async target => {
 		id,
 	);
 
+	const destinationLis = getHTML.getAll(
+		'.destinationTextDiv .destinationsUl li',
+	);
+
 	$imageDestination.src = images.webp;
 	$destinationH1.textContent = name;
 
@@ -55,12 +44,13 @@ const attInfos = async target => {
 
 	$travelTime.textContent = travel;
 
-	addAnimation('0', '0');
+	addAnimation([destinationTextDiv, destinationDiv], '0');
 	turnActive(target.getAttribute('name'), destinationLis);
 };
 
 const hideDiv = target => {
-	const timeline = addAnimation('-500px', '-500px');
+	const height = body.clientWidth <= 830 ? '-650px' : '-500px';
+	const timeline = addAnimation([destinationTextDiv, destinationDiv], height);
 	timeline.finished.then(() => attInfos(target));
 };
 
@@ -74,4 +64,8 @@ destinationTextDiv.addEventListener('click', ({ target }) => {
 	const targetName = target.getAttribute('data-js');
 	const func = actions[targetName];
 	func?.(target);
+});
+
+iconMenu.addEventListener('click', e => {
+	showNav(e);
 });

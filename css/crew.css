@@ -5,8 +5,8 @@ body {
 .main {
 	bottom: 0;
 	overflow: hidden;
-	min-height: 500px;
 	position: absolute;
+	min-height: 31.25rem;
 	justify-content: space-around;
 }
 
@@ -82,10 +82,8 @@ body {
 }
 
 .main .personImage {
+	max-height: 31.25rem;
 	position: relative;
-	max-height: 500px;
-	/* max-height: 150px; */
-	/* max-width: 150px; */
 }
 
 @media (max-height: 820px) {
@@ -111,43 +109,39 @@ body {
 	}
 }
 
-/* 1230 */
-
 @media (max-width: 1230px) {
 	.main .crewTextDiv .crewTextBio h1 {
 		font-size: 2.5rem;
 	}
 
 	.main .personImage {
-		max-height: 450px;
-		/* max-width: 150px; */
+		max-height: 28.125rem;
 	}
 }
-/*    */
+
 @media (max-width: 1000px) {
 	.main {
+		min-height: 75%;
 		flex-direction: column;
 		justify-content: space-between;
-		min-height: 75%;
 	}
 
 	.main .personImage {
-		max-height: 290px;
-		/* max-width: 200px; */
+		max-height: 18.125rem;
 	}
 
 	.main .crewTextDiv {
+		width: 100%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		justify-content: center;
-		width: 100%;
 	}
 
 	.main .crewTextDiv .crewTextBio {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
+		flex-direction: column;
 	}
 
 	.main .crewTextDiv .crewTextBio h2 {
@@ -160,9 +154,9 @@ body {
 	}
 
 	.main .crewTextDiv .crewTextBio p {
-		margin-bottom: 3rem;
-		text-align: center;
 		font-size: 1rem;
+		text-align: center;
+		margin-bottom: 3rem;
 	}
 
 	.main .crewTextDiv .carouselButtons button {
@@ -175,25 +169,22 @@ body {
 
 @media (max-width: 840px) {
 	.main {
-		flex-direction: column-reverse;
 		justify-content: center;
+		flex-direction: column-reverse;
 	}
 
 	.main .personImage {
-		/* max-height: 290px; */
-		max-width: 200px;
+		max-width: 12.5rem;
 		position: relative;
 	}
 
 	.main .personImage::after {
-		content: '';
-		position: absolute;
-		/* left: -25%; */
-		left: -70%;
 		bottom: 0;
+		left: -70%;
+		content: '';
 		height: 1px;
 		width: 250%;
-		/* width: 150%; */
+		position: absolute;
 		background-color: #d0d6f9;
 	}
 
@@ -223,7 +214,6 @@ body {
 		font-size: 0.9375rem;
 	}
 }
-/* 420 */
 
 @media (max-width: 420px) {
 	.main .personImage::after {
