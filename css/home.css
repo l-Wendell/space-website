@@ -1,5 +1,5 @@
 body {
-	background-image: url(/assets/home/background-home-desktop.jpg);
+	background-image: url(../assets/home/background-home-desktop.jpg);
 }
 
 .main {
@@ -92,7 +92,7 @@ body {
 
 @media (max-width: 830px) {
 	body {
-		background-image: url(/assets/home/background-home-tablet.jpg);
+		background-image: url(../assets/home/background-home-tablet.jpg);
 	}
 
 	.main {
